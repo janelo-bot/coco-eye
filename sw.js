@@ -1,5 +1,5 @@
-const CACHE_NAME = 'coco-eye-v1';
-const FILES = ['./', './index.html', './manifest.json'];
+const CACHE_NAME = 'coco-eye-v2';
+const FILES = ['./', './index.html', './manifest.json', './coco-eye-calendar.ics'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(FILES)));
 });
