@@ -2,199 +2,34 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#3b82f6">
-<link rel="manifest" href="manifest.json">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CoCo點眼藥行程表</title>
 <style>
-:root{
-  --blue:#dbeafe;
-  --pink:#ffe4ee;
-  --line:#e5e7eb;
-  --text:#1f2937;
-}
-*{box-sizing:border-box}
-body{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;
-  background:#f5f7fb;
-  color:var(--text);
-  padding:14px;
-  margin:0;
-}
-h1{
-  font-size:24px;
-  margin:4px 0 10px;
-  text-align:center;
-}
-.note{
-  background:#fff7ed;
-  border:1px solid #fed7aa;
-  border-radius:12px;
-  padding:12px;
-  font-size:15px;
-  line-height:1.6;
-  margin-bottom:12px;
-}
-.calendar-box{
-  background:#eff6ff;
-  border:1px solid #bfdbfe;
-  border-radius:12px;
-  padding:12px;
-  margin-bottom:12px;
-  font-size:15px;
-  line-height:1.6;
-}
-.calendar-btn{
-  display:block;
-  text-align:center;
-  text-decoration:none;
-  background:#2563eb;
-  color:white;
-  padding:12px;
-  border-radius:10px;
-  font-weight:700;
-  margin-top:8px;
-}
-.card{
-  background:white;
-  border-radius:14px;
-  overflow:hidden;
-  box-shadow:0 2px 8px rgba(0,0,0,.08);
-}
-table{
-  width:100%;
-  border-collapse:collapse;
-  font-size:16px;
-}
-th,td{
-  padding:11px 8px;
-  border-bottom:1px solid var(--line);
-  text-align:center;
-}
-th.time{background:#f3f4f6;}
-th.left{background:var(--pink);}
-th.right{background:var(--blue);}
-th.done{background:#f3f4f6;}
-td.time{
-  font-weight:700;
-  white-space:nowrap;
-}
-td.left{background:#fff7fa;}
-td.right{background:#f8fbff;}
-.med{
-  display:inline-block;
-  padding:5px 9px;
-  border-radius:999px;
-  font-weight:700;
-  color:white;
-  min-width:32px;
-}
-.cv{background:#2563eb;}
-.ne{background:#16a34a;}
-.bl{background:#7c3aed;}
-.ke{background:#f59e0b;}
-input[type=checkbox]{
-  width:24px;
-  height:24px;
-  accent-color:#22c55e;
-}
-.controls{
-  display:flex;
-  gap:10px;
-  margin-top:14px;
-}
-button{
-  flex:1;
-  padding:12px;
-  border:none;
-  border-radius:10px;
-  background:#3b82f6;
-  color:#fff;
-  font-size:16px;
-  font-weight:700;
-}
-button.secondary{background:#6b7280;}
-.summary{
-  margin-top:12px;
-  font-size:14px;
-  color:#4b5563;
-  line-height:1.6;
-  padding-bottom:20px;
-}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;background:#f5f7fb;padding:24px;text-align:center}
+.card{background:white;border-radius:16px;padding:22px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+a{display:inline-block;margin-top:16px;background:#2563eb;color:white;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
 </style>
 </head>
 <body>
-<h1>🐶 CoCo點眼藥行程表</h1>
-
-<div class="calendar-box">
-  📅 要手機通知的話，點下面按鈕加入 iPhone 行事曆。<br>
-  加入後，手機會依照時間提醒點眼藥。
-  <a class="calendar-btn" href="coco-eye-calendar.ics">加入手機行事曆提醒</a>
-</div>
-
-<div class="note">
-  ✅ 順序不可改：<br>
-  左眼：CV → NE → BL<br>
-  右眼：KE → BL<br>
-  ✅ 同一眼不同眼藥間隔至少 10 分鐘<br>
-  ✅ 左右眼 BL 已安排在同一個時段
-</div>
-
 <div class="card">
-<table>
-<tr>
-  <th class="time">時間</th>
-  <th class="left">左眼</th>
-  <th class="right">右眼</th>
-  <th class="done">完成</th>
-</tr>
-<tr><td class="time">10:00</td><td class="left"><span class="med cv">CV</span></td><td class="right"><span class="med ke">KE</span></td><td><input type="checkbox"></td></tr>
-<tr><td class="time">10:10</td><td class="left"><span class="med ne">NE</span></td><td class="right">—</td><td><input type="checkbox"></td></tr>
-<tr><td class="time">10:20</td><td class="left"><span class="med bl">BL</span></td><td class="right"><span class="med bl">BL</span></td><td><input type="checkbox"></td></tr>
-<tr><td class="time">13:30</td><td class="left"><span class="med cv">CV</span></td><td class="right">—</td><td><input type="checkbox"></td></tr>
-<tr><td class="time">13:40</td><td class="left"><span class="med ne">NE</span></td><td class="right">—</td><td><input type="checkbox"></td></tr>
-<tr><td class="time">13:50</td><td class="left"><span class="med bl">BL</span></td><td class="right"><span class="med bl">BL</span></td><td><input type="checkbox"></td></tr>
-<tr><td class="time">17:00</td><td class="left"><span class="med cv">CV</span></td><td class="right"><span class="med ke">KE</span></td><td><input type="checkbox"></td></tr>
-<tr><td class="time">17:10</td><td class="left"><span class="med ne">NE</span></td><td class="right">—</td><td><input type="checkbox"></td></tr>
-<tr><td class="time">17:20</td><td class="left"><span class="med bl">BL</span></td><td class="right"><span class="med bl">BL</span></td><td><input type="checkbox"></td></tr>
-<tr><td class="time">20:30</td><td class="left"><span class="med cv">CV</span></td><td class="right">—</td><td><input type="checkbox"></td></tr>
-<tr><td class="time">20:40</td><td class="left"><span class="med bl">BL</span></td><td class="right"><span class="med bl">BL</span></td><td><input type="checkbox"></td></tr>
-</table>
+<h2>🐶 CoCo點眼藥行程表</h2>
+<p>正在載入新版...</p>
+<a href="./v2/?v=20260701">手動開啟新版</a>
 </div>
-
-<div class="controls">
-  <button onclick="checkAll()">全部完成</button>
-  <button class="secondary" onclick="clearAll()">清除勾選</button>
-</div>
-
-<div class="summary">
-  左眼：CV 4次、NE 3次、BL 4次<br>
-  右眼：KE 2次、BL 4次
-</div>
-
 <script>
-const today = new Date().toISOString().slice(0,10);
-const KEY_PREFIX='coco_eyecheck_'+today+'_';
-document.querySelectorAll('input[type=checkbox]').forEach((c,i)=>{
- const key=KEY_PREFIX+i;
- c.checked=localStorage.getItem(key)==='1';
- c.onchange=()=>localStorage.setItem(key,c.checked?'1':'0');
-});
-function clearAll(){
- document.querySelectorAll('input[type=checkbox]').forEach((c,i)=>{
-   c.checked=false;
-   localStorage.setItem(KEY_PREFIX+i,'0');
- });
-}
-function checkAll(){
- document.querySelectorAll('input[type=checkbox]').forEach((c,i)=>{
-   c.checked=true;
-   localStorage.setItem(KEY_PREFIX+i,'1');
- });
-}
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').catch(()=>{});
-}
+(async()=>{
+  try{
+    if('serviceWorker' in navigator){
+      const regs = await navigator.serviceWorker.getRegistrations();
+      for(const r of regs){ await r.unregister(); }
+    }
+    if('caches' in window){
+      const keys = await caches.keys();
+      await Promise.all(keys.map(k=>caches.delete(k)));
+    }
+  }catch(e){}
+  location.replace('./v2/?v=20260701');
+})();
 </script>
 </body>
 </html>
