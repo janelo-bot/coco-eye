@@ -4,38 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#2563eb">
-<link rel="manifest" href="manifest.json?v=final">
+<link rel="manifest" href="manifest.json?v=20260716">
 <title>CoCo點眼藥行程表</title>
 <style>
 :root{--blue:#dbeafe;--pink:#ffe4ee;--line:#e5e7eb;--text:#1f2937}
 *{box-sizing:border-box}
-body{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;
-  background:#f5f7fb;color:var(--text);padding:14px;margin:0;
-}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;background:#f5f7fb;color:var(--text);padding:14px;margin:0}
 h1{font-size:24px;margin:4px 0 10px;text-align:center}
-.reminder{
-  background:#eff6ff;border:1px solid #bfdbfe;border-radius:14px;
-  padding:14px;margin-bottom:12px;line-height:1.6;font-size:15px;
-}
+.reminder{background:#eff6ff;border:1px solid #bfdbfe;border-radius:14px;padding:14px;margin-bottom:12px;line-height:1.6;font-size:15px}
 .reminder h2{font-size:18px;margin:0 0 6px}
-.bigbtn{
-  display:block;text-align:center;text-decoration:none;background:#2563eb;color:white;
-  padding:14px;border-radius:12px;font-weight:800;font-size:18px;margin-top:10px;
-}
+.bigbtn{display:block;text-align:center;text-decoration:none;background:#2563eb;color:white;padding:14px;border-radius:12px;font-weight:800;font-size:18px;margin-top:10px}
 .help{font-size:13px;color:#475569;margin-top:8px}
-.note{
-  background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;
-  padding:12px;font-size:15px;line-height:1.6;margin-bottom:12px;
-}
+.note{background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;padding:12px;font-size:15px;line-height:1.6;margin-bottom:12px}
 .card{background:white;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08)}
 table{width:100%;border-collapse:collapse;font-size:16px}
 th,td{padding:11px 8px;border-bottom:1px solid var(--line);text-align:center}
 th.time{background:#f3f4f6} th.left{background:var(--pink)} th.right{background:var(--blue)} th.done{background:#f3f4f6}
-td.time{font-weight:700;white-space:nowrap}
-td.left{background:#fff7fa} td.right{background:#f8fbff}
+td.time{font-weight:700;white-space:nowrap} td.left{background:#fff7fa} td.right{background:#f8fbff}
 .med{display:inline-block;padding:5px 9px;border-radius:999px;font-weight:700;color:white;min-width:32px}
-.cv{background:#2563eb}.ne{background:#16a34a}.bl{background:#7c3aed}.ke{background:#f59e0b}
+.cv{background:#2563eb} .ne{background:#16a34a} .ch{background:#dc2626} .bl{background:#7c3aed} .ke{background:#f59e0b}
 input[type=checkbox]{width:24px;height:24px;accent-color:#22c55e}
 .controls{display:flex;gap:10px;margin-top:14px}
 button{flex:1;padding:12px;border:none;border-radius:10px;background:#3b82f6;color:#fff;font-size:16px;font-weight:700}
@@ -50,19 +37,19 @@ button.secondary{background:#6b7280}
 <div class="reminder">
   <h2>🔔 設定每日提醒</h2>
   點下面按鈕，匯入手機行事曆。匯入後，iPhone / Android 會每天依時間提醒點眼藥。
-  <a class="bigbtn" href="coco-eye-daily-reminder.ics?v=final">🔔 設定每日提醒</a>
+  <a class="bigbtn" href="coco-eye-daily-reminder.ics?v=20260716">🔔 設定每日提醒</a>
   <div class="help">
     iPhone：請用 Safari 開啟本頁，點按鈕後選「加入行事曆 / 加入全部」。<br>
-    如果之前匯入過舊版提醒，請先到行事曆刪除舊的「CoCo點眼藥提醒」，避免重複通知。
+    若之前匯入過舊版提醒，請先刪除舊的 CoCo 點眼藥行事曆事件，避免重複通知。
   </div>
 </div>
 
 <div class="note">
-  ✅ 順序不可改：<br>
-  左眼：CV → NE → BL<br>
-  右眼：KE → BL<br>
+  ✅ 左眼第一輪：CV → NE → CH → BL<br>
+  ✅ 左眼其餘三輪：CV → CH → BL<br>
+  ✅ 右眼：KE → BL<br>
   ✅ 同一眼不同眼藥間隔至少 10 分鐘<br>
-  ✅ 左右眼 BL 已安排在同一個時段
+  ✅ 左右眼 BL 安排在同一時段
 </div>
 
 <div class="card">
@@ -70,15 +57,17 @@ button.secondary{background:#6b7280}
 <tr><th class="time">時間</th><th class="left">左眼</th><th class="right">右眼</th><th class="done">完成</th></tr>
 <tr><td class="time">10:00</td><td class="left"><span class="med cv">CV</span></td><td class="right"><span class="med ke">KE</span></td><td><input type="checkbox"></td></tr>
 <tr><td class="time">10:10</td><td class="left"><span class="med ne">NE</span></td><td class="right">—</td><td><input type="checkbox"></td></tr>
-<tr><td class="time">10:20</td><td class="left"><span class="med bl">BL</span></td><td class="right"><span class="med bl">BL</span></td><td><input type="checkbox"></td></tr>
+<tr><td class="time">10:20</td><td class="left"><span class="med ch">CH</span></td><td class="right">—</td><td><input type="checkbox"></td></tr>
+<tr><td class="time">10:30</td><td class="left"><span class="med bl">BL</span></td><td class="right"><span class="med bl">BL</span></td><td><input type="checkbox"></td></tr>
 <tr><td class="time">13:30</td><td class="left"><span class="med cv">CV</span></td><td class="right">—</td><td><input type="checkbox"></td></tr>
-<tr><td class="time">13:40</td><td class="left"><span class="med ne">NE</span></td><td class="right">—</td><td><input type="checkbox"></td></tr>
+<tr><td class="time">13:40</td><td class="left"><span class="med ch">CH</span></td><td class="right">—</td><td><input type="checkbox"></td></tr>
 <tr><td class="time">13:50</td><td class="left"><span class="med bl">BL</span></td><td class="right"><span class="med bl">BL</span></td><td><input type="checkbox"></td></tr>
 <tr><td class="time">17:00</td><td class="left"><span class="med cv">CV</span></td><td class="right"><span class="med ke">KE</span></td><td><input type="checkbox"></td></tr>
-<tr><td class="time">17:10</td><td class="left"><span class="med ne">NE</span></td><td class="right">—</td><td><input type="checkbox"></td></tr>
+<tr><td class="time">17:10</td><td class="left"><span class="med ch">CH</span></td><td class="right">—</td><td><input type="checkbox"></td></tr>
 <tr><td class="time">17:20</td><td class="left"><span class="med bl">BL</span></td><td class="right"><span class="med bl">BL</span></td><td><input type="checkbox"></td></tr>
 <tr><td class="time">20:30</td><td class="left"><span class="med cv">CV</span></td><td class="right">—</td><td><input type="checkbox"></td></tr>
-<tr><td class="time">20:40</td><td class="left"><span class="med bl">BL</span></td><td class="right"><span class="med bl">BL</span></td><td><input type="checkbox"></td></tr>
+<tr><td class="time">20:40</td><td class="left"><span class="med ch">CH</span></td><td class="right">—</td><td><input type="checkbox"></td></tr>
+<tr><td class="time">20:50</td><td class="left"><span class="med bl">BL</span></td><td class="right"><span class="med bl">BL</span></td><td><input type="checkbox"></td></tr>
 </table>
 </div>
 
@@ -88,14 +77,14 @@ button.secondary{background:#6b7280}
 </div>
 
 <div class="summary">
-  左眼：CV 4次、NE 3次、BL 4次<br>
+  左眼：CV 4次、NE 1次、CH 4次、BL 4次<br>
   右眼：KE 2次、BL 4次
 </div>
-<div class="version">final-no-cache-20260701</div>
+<div class="version">updated-20260716</div>
 
 <script>
 const today = new Date().toISOString().slice(0,10);
-const KEY_PREFIX='coco_eyecheck_final_'+today+'_';
+const KEY_PREFIX='coco_eyecheck_updated_'+today+'_';
 document.querySelectorAll('input[type=checkbox]').forEach((c,i)=>{
  const key=KEY_PREFIX+i;
  c.checked=localStorage.getItem(key)==='1';

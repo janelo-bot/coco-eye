@@ -1,7 +1,7 @@
 {
   "name": "CoCo點眼藥行程表",
   "short_name": "CoCo眼藥",
-  "start_url": "./?v=final",
+  "start_url": "./?v=20260716",
   "display": "standalone",
   "background_color": "#f5f7fb",
   "theme_color": "#2563eb",
